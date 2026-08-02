@@ -1,0 +1,65 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+using Random = UnityEngine.Random;
+public class GameManager : MonoBehaviour
+{
+    public static GameManager Instance { get; private set; }
+    private ElementController _player;
+    private ElementController _enemy;
+    public BattleArenaController BattleArena;
+
+    [SerializeField] private List<ElementController> ListElement;
+    [SerializeField] private List<ButtonController> ListButton;
+
+
+    private void Awake()
+    {
+      
+        
+            Instance = this;
+        
+    }
+    public void SelectElement(ElementController controller)
+    {
+       _player = controller;
+    }
+
+    public void RandomEnemy() 
+    {
+    var indx = Random.Range(0, ListElement.Count);
+    _enemy = ListElement[indx];
+
+    }
+
+
+
+    public void Start()
+    {
+        for (int i = 0; i < ListButton.Count; i++)
+        {
+           var button = ListButton[i];
+           var element = ListElement[i];
+           button.PopuLate(element);
+
+
+        }
+        
+    }
+
+    
+    public void Battle()
+    {
+        var currentState = ResultState.Beraberlik;
+        // player wins when enemy's weak types include player's type
+        var contains = _enemy.WeakTypes.Contains(_player.MyType);
+        currentState = contains ? ResultState.Kazandınız : ResultState.Kaybettiniz;
+        if (_player.MyType == _enemy.MyType)
+        {
+            currentState = ResultState.Beraberlik;
+        }
+        BattleArena.Populate(_player.MySprite, _enemy.MySprite, currentState);
+    }
+
+}
+
+

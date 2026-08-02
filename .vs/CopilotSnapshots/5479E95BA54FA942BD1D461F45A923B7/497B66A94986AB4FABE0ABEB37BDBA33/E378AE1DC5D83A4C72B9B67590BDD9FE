@@ -1,0 +1,21 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+public class ButtonController : MonoBehaviour 
+{
+    [SerializeField] private Image image;
+    private ElementController _contoller;
+
+    public void PopuLate(ElementController controller)
+    {
+        _contoller = controller;
+        image.sprite = controller.MySprite;
+    }
+
+    public void OnClick()
+    {
+        GameManager.Instance.SelectElement(_contoller);
+        GameManager.Instance.RandomEnemy();
+        GameManager.Instance.Battle();
+    }
+}
