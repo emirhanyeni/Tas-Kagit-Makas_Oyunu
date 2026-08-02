@@ -32,6 +32,6 @@ Projeyi Unity içinde açmak ve geliştirmeye devam etmek için:
 4. Proje açıldıktan sonra `Assets/` klasörü altındaki sahneleri (Scenes) bularak çalışmaya başlayabilirsiniz.
 
 
-##Proje Yapımcısı:
+Proje Yapımcısı:
 Emirhan Yeni
 ---
