@@ -31,7 +31,7 @@ Projeyi Unity içinde açmak ve geliştirmeye devam etmek için:
 3. Unity Hub, projenin hangi sürümle yapıldığını otomatik algılayacaktır. İlgili sürüm yüklü değilse indirip kurmanız istenebilir.
 4. Proje açıldıktan sonra `Assets/` klasörü altındaki sahneleri (Scenes) bularak çalışmaya başlayabilirsiniz.
 
----
+
 #Proje Yapımcısı:
 Emirhan Yeni
 ---
